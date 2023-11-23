@@ -44,3 +44,9 @@ def MergeRaw(*Raws):
             merged_df = df
         
     return merged_df.T
+    
+def Del_menu(df,*menus):
+    for menu in menus:
+        df=df.drop(menu,axis=1)
+    return df
+

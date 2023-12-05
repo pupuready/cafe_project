@@ -5,7 +5,7 @@ from sklearn.model_selection import TimeSeriesSplit
 from pandas.tseries.offsets import DateOffset
 
 #define_X 함수로 모델 학습에 사용할 독립변수 설정.
-def define_X(day_option=False,region=False,month=False,season=False):
+def define_X(day_option=False,region=False,month=False,season=False,kospi=False,kosdaq=False):
     merge = None
 
     if day_option:
@@ -44,8 +44,13 @@ def define_X(day_option=False,region=False,month=False,season=False):
         merge = season_data if merge is None else pd.merge(merge, season_data, left_index=True, right_index=True, how='inner')
     if month!= False:
         month_data = pd.read_csv("https://raw.githubusercontent.com/pupuready/cafe_project/main/Data/month", index_col=0)
-        merge = season_data if merge is None else pd.merge(merge, month_data, left_index=True, right_index=True, how='inner')
-
+        merge = month_data if merge is None else pd.merge(merge, month_data, left_index=True, right_index=True, how='inner')
+    if kospi!= False:
+        kospi_data = pd.read_csv("https://raw.githubusercontent.com/pupuready/cafe_project/main/Data/kospi", index_col=0)
+        merge = kospi_data if merge is None else pd.merge(merge, kospi_data, left_index=True, right_index=True, how='inner')
+    if kosdaq!= False:
+        kosdaq_data = pd.read_csv("https://raw.githubusercontent.com/pupuready/cafe_project/main/Data/kosdaq", index_col=0)
+        merge = kosdaq_data if merge is None else pd.merge(merge, kosdaq_data, left_index=True, right_index=True, how='inner')
     return merge
 
 

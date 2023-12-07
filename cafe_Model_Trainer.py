@@ -5,7 +5,7 @@ from sklearn.model_selection import TimeSeriesSplit
 from pandas.tseries.offsets import DateOffset
 
 #define_X 함수로 모델 학습에 사용할 독립변수 설정.
-def define_X(day_option=False,region=False,month=False,season=False,kospi=False,kosdaq=False):
+def define_X(day_option=False,region=False,month=False,season=False,kospi=False,kosdaq=False,college=False):
     merge = None
 
     if day_option:

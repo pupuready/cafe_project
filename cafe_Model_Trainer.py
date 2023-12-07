@@ -51,6 +51,10 @@ def define_X(day_option=False,region=False,month=False,season=False,kospi=False,
     if kosdaq!= False:
         kosdaq_data = pd.read_csv("https://raw.githubusercontent.com/pupuready/cafe_project/main/Data/kosdaq", index_col=0)
         merge = kosdaq_data if merge is None else pd.merge(merge, kosdaq_data, left_index=True, right_index=True, how='inner')
+    if college!= False:
+        college_data = pd.read_csv("https://raw.githubusercontent.com/pupuready/cafe_project/main/Data/college", index_col=0)
+        merge = college_data if merge is None else pd.merge(merge, college_data, left_index=True, right_index=True, how='inner')
+    
     return merge
 
 

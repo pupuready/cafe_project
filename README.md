@@ -1,5 +1,5 @@
 # Cafe Demand Forecast
-<img width="988" alt="image" src="https://github.com/pupuready/cafe_project/assets/130034324/30c86117-838a-48e7-aeed-0c2b8a79551e">
+![image](https://github.com/pupuready/cafe_project/assets/130034324/4dcaadc1-3ec5-4111-9030-6713a710299f)
 
 ## Topic 
 카페 재고 수요 예측하기
